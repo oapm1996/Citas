@@ -1,6 +1,10 @@
 import {useState, useEffect} from 'react';
 
 const Formulario = () => {
+  /* The line `const [nombre, setNombre] = useState('');` is using the `useState` hook from React to create a state variable 
+  called `nombre` and a function called `setNombre` to update the value of `nombre`. */
+  const [nombre, setNombre] = useState('');
+
   return (
     <div className="md:w-1/2 lg:w-2/5">
         <h2 className="font-black text-3xl text-center">
@@ -19,6 +23,12 @@ const Formulario = () => {
                 type="text"
                 placeholder="Nombre de la mascota"
                 className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
+                /* The `value={nombre}` attribute is binding the value of the input field to the `nombre` state variable. This means that the initial value of the input field will
+                be set to the value of `nombre`, and any changes made to the input field will update the value of `nombre`. */
+                value={nombre}
+                /* The `onChange={(e) => setNombre(e.target.value)}` is an event handler that is
+                triggered when the value of the input field with the id 'mascota' changes. */
+                onChange={(e) => setNombre(e.target.value)}
               />
             </div>
 
